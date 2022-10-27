@@ -1,7 +1,8 @@
-import java.util.Scanner;
+import java.util.Scanner; //importing scanner
 
-public class q8 {
-    public static void main(String[] args) {
+public class q8 { // start of class
+    public static void main(String[] args) { // start of main method
+        // taking input
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter number of rows");
         int m = sc.nextInt();
@@ -14,6 +15,8 @@ public class q8 {
                 arr[i][j] = sc.nextInt();
             }
         }
+
+        // finding sum of boundary elemnenrs and printing non boundary elemennts
         int boundary_sum = 0;
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
@@ -30,5 +33,5 @@ public class q8 {
 
         sc.close();
 
-    }
-}
+    } // end of method
+} // end of class

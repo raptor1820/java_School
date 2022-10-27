@@ -1,7 +1,9 @@
-import java.util.Scanner;
+import java.util.Scanner; //importing scanner
 
-public class q6 {
+public class q6 { // start of class
     public static void main(String[] args) {
+        // taking input and finidng largest and second largest elements and storing
+        // their indices
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the order of matrix");
         int n = sc.nextInt();
@@ -23,12 +25,16 @@ public class q6 {
                 }
             }
         }
+
+        // printing original array
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
                 System.out.print(arr[i][j] + " ");
             }
             System.out.println();
         }
+
+        // priting largest and second largest elemets and the sorted array
         System.out.println(
                 "Largest element is " + n_largest + " at row " + (largest[0] + 1) + " column " + (largest[1] + 1));
         System.out.println(
@@ -44,6 +50,7 @@ public class q6 {
         sc.close();
     }
 
+    // sorting each row of the array
     public static int[] sort(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length - 1; j++) {

@@ -1,7 +1,8 @@
-import java.util.Scanner;
+import java.util.Scanner; //importinf scanner
 
-public class q4 {
-    public static void main(String[] args) {
+public class q4 { // start of class
+    public static void main(String[] args) { // start of method
+        // taking inout
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter number of participants: ");
         int n = sc.nextInt();
@@ -13,6 +14,7 @@ public class q4 {
             key[i] = Character.toLowerCase(sc.next().charAt(0));
         }
         System.out.println("Enter Scores");
+        // comapring scroes
         for (int i = 0; i < arr.length; i++) {
             System.out.println("Participant " + (i + 1));
             for (int j = 0; j < arr[i].length; j++) {
@@ -22,6 +24,8 @@ public class q4 {
                 }
             }
         }
+        // finding max score
+
         int max_index = 0;
         int max_score = 0;
         for (int i = 0; i < score.length; i++) {
@@ -34,5 +38,5 @@ public class q4 {
         System.out.println("Max score: " + "Participant " + (max_index + 1));
 
         sc.close();
-    }
-}
+    } // end of method
+} // end of class

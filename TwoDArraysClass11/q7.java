@@ -1,12 +1,13 @@
-import java.util.Scanner;
+import java.util.Scanner; //importing scanner
 
-public class q7 {
+public class q7 { // start if class
     public static void main(String[] args) {
+        // taking input
+
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter order of the matrix");
         int n = sc.nextInt();
         int arr[][] = new int[n][n];
-
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
                 arr[i][j] = sc.nextInt();
@@ -18,6 +19,8 @@ public class q7 {
             }
             System.out.println();
         }
+
+        // fingind saddle point of the array
         boolean flag = true;
         for (int i = 0; i < arr.length; i++) {
             int min_row = arr[i][0];
@@ -47,5 +50,5 @@ public class q7 {
             System.out.println("No saddle point");
         }
         sc.close();
-    }
-}
+    } // end of method
+} // end of class
