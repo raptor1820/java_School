@@ -1,52 +1,38 @@
 import java.util.Scanner;
 
-//program to input elements in spiral order 
 public class q4 {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("enter number of rows");
-        int m = sc.nextInt();
-        System.out.println("enter number of columns");
+        System.out.println("Enter number of participants: ");
         int n = sc.nextInt();
-        int arr[][] = new int[m][n];
-        /*
-         * recursive approach is used here
-         * shell() takes input for only the outer layer of the array
-         * mid stores the number of layers, which is half of the number of rows or
-         * columns whichever is lesser
-         * calling shell() for each layer of the array effectively returns an array in
-         * spiral order
-         */
-
-        int mid = arr.length > arr[0].length ? (int) Math.ceil(arr[0].length / 2) : (int) Math.ceil(arr.length / 2);
-
-        for (int i = 0; i < mid; i++) {
-            shell(arr, i, arr[0].length - i - 1, i, arr.length - i - 1);
+        char arr[][] = new char[n][5];
+        char key[] = new char[5];
+        int score[] = new int[n];
+        System.out.println("Enter the correct answer key: ");
+        for (int i = 0; i < key.length; i++) {
+            key[i] = Character.toLowerCase(sc.next().charAt(0));
         }
+        System.out.println("Enter Scores");
         for (int i = 0; i < arr.length; i++) {
+            System.out.println("Participant " + (i + 1));
             for (int j = 0; j < arr[i].length; j++) {
-                System.out.print(arr[i][j] + " ");
+                arr[i][j] = Character.toLowerCase(sc.next().charAt(0));
+                if (arr[i][j] == key[j]) {
+                    score[i] += 1;
+                }
             }
-            System.out.println();
         }
+        int max_index = 0;
+        int max_score = 0;
+        for (int i = 0; i < score.length; i++) {
+            System.out.println("Participant " + (i + 1) + " : " + score[i]);
+            if (score[i] > max_score) {
+                max_index = i;
+                max_score = score[i];
+            }
+        }
+        System.out.println("Max score: " + "Participant " + (max_index + 1));
+
         sc.close();
-    }
-
-    // iterate through first row, last column, last row and first column in order
-    public static void shell(int arr[][], int col_start, int col_end, int row_start, int row_end) {
-        for (int i = col_start; i < col_end; i++) {
-            arr[row_start][i] = new Scanner(System.in).nextInt();
-        }
-        for (int i = row_start; i < row_end; i++) {
-            arr[i][col_end] = new Scanner(System.in).nextInt();
-        }
-        for (int i = col_end; i > col_start; i--) {
-            arr[row_end][i] = new Scanner(System.in).nextInt();
-        }
-        for (int i = row_end; i > row_start; i--) {
-            arr[i][col_start] = new Scanner(System.in).nextInt();
-        }
-
     }
 }
